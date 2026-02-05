@@ -28,7 +28,8 @@ def test_app_structure():
     
     # Import the app module
     try:
-        sys.path.insert(0, '/home/runner/work/ltx-video-generator/ltx-video-generator')
+        # Add current directory to path for imports
+        sys.path.insert(0, str(Path(__file__).parent))
         # We can't fully import app because it will try to launch, but we can check syntax
         with open('app.py', 'r') as f:
             content = f.read()
